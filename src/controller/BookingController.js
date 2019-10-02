@@ -11,7 +11,7 @@ module.exports = {
     const booking = await Booking.create({
         user: user_id,
         spot: spot_id,
-        date,
+        date
     });
 
 
