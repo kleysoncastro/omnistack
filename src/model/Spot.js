@@ -11,6 +11,20 @@ const SpotSchema = new mongoose.Schema({
         ref: "User"
     }
 
+}, {
+// habilita criacao virtal que 
+    toJSON: {
+        virtuals: true
+    }
+
 });// fim SpotSchema
+
+
+// cria uma rota virtual juntando o localhost e thumbnail
+SpotSchema.virtual('thumbnail_url').get(function(){
+
+    return `http://localhost:3333/files/${this.thumbnail}`
+
+});
 
 module.exports = mongoose.model('Spot', SpotSchema);
