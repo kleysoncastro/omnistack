@@ -23,7 +23,7 @@ const SpotSchema = new mongoose.Schema({
 // cria uma rota virtual juntando o localhost e thumbnail
 SpotSchema.virtual('thumbnail_url').get(function(){
 
-    return `http://localhost:3333/files/${this.thumbnail}`
+    return `http://192.168.0.9:3333/files/${this.thumbnail}`
 
 });
 
